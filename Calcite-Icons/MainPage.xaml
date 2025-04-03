@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Calcite_Icons.MainPage"
+             BackgroundColor="GreenYellow">
+
+    <Grid>
+        <ScrollView>
+            <VerticalStackLayout
+                Padding="30,0"
+                Spacing="25">
+
+                <Label
+                    Text="Calcite Icons"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" />
+
+                <SearchBar x:Name="IconSearchBar" Placeholder="Search icons" TextChanged="OnSearchBarTextChanged" />
+
+                <CollectionView x:Name="IconsCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Grid WidthRequest="48" HeightRequest="48">
+                                    <BoxView Color="DarkGrey" WidthRequest="1" HorizontalOptions="Center" VerticalOptions="FillAndExpand" />
+                                    <BoxView Color="DarkGrey" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                                    <Border
+                                        Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                        <Image 
+                                            Source="{Binding Icon16}"
+                                            HeightRequest="16"
+                                            WidthRequest="16"/>
+                                    </Border>
+                                </Grid>
+                                <Grid WidthRequest="48" HeightRequest="48">
+                                    <BoxView Color="DarkGrey" WidthRequest="1" HorizontalOptions="Center" VerticalOptions="FillAndExpand" />
+                                    <BoxView Color="DarkGrey" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                                    <Border
+                                        Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                        <Image 
+                                            Source="{Binding Icon20}"
+                                            HeightRequest="20"
+                                            WidthRequest="20"/>
+                                    </Border>
+                                </Grid>
+                                <Grid WidthRequest="48" HeightRequest="48">
+                                    <BoxView Color="DarkGrey" WidthRequest="1" HorizontalOptions="Center" VerticalOptions="FillAndExpand" />
+                                    <BoxView Color="DarkGrey" HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                                    <Border
+                                        Stroke="#C49B33"
+                                        StrokeThickness="1"
+                                        HorizontalOptions="Center"
+                                        VerticalOptions="Center">
+                                        <Image 
+                                            Source="{Binding Icon24}"
+                                            HeightRequest="24"
+                                            WidthRequest="24"/>
+                                    </Border>
+                                </Grid>
+                                <Label Text="{Binding IconName}" VerticalOptions="Center" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <ActivityIndicator Color="Teal" x:Name="BusyIndicator" IsRunning="False" IsVisible="False" VerticalOptions="Center" HorizontalOptions="Center" />
+    </Grid>
+</ContentPage>
